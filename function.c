@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<ctype.h>
+#include<string.h>
 
 void print_letter(char arg[]);
 int can_print_it(char ch);
@@ -20,10 +21,10 @@ int main(int argc, char *argv[])
 void print_letter(char *arg)
 {
         int i = 0;
-        for(i=0; arg[i] != '\0';i++ ){
+        for(i=0; i < strlen(arg);i++ ){
                 char ch = arg[i];
 
-                if(can_print_it(ch)) {
+                if(isalpha(ch) || isblank(ch)) {
                         printf("'%c' == %d \n", ch ,ch);
                 }
         }
